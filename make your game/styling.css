@@ -1,0 +1,181 @@
+
+body {
+    /* cursor:crosshair; */
+    cursor: url("gifs/targeting.png"), auto;
+background-image: url("gifs/stage.png");
+overflow: hidden;
+background-repeat: no-repeat;
+background-size: cover; /* Makes the background image cover the full screen */
+background-position: center; /* Centers the image */
+margin: 0; /* Removes default margin */
+height: 100vh; /* Ensures the body height matches the viewport height */
+width: 100vw; /* Ensures the body width matches the viewport width */
+}
+
+#small{
+width: 250px;
+left: -200px;
+position: absolute;
+bottom:  65%;
+}
+#med{
+width: 180px;
+left: -200px;
+position: absolute;
+bottom:  65%;
+}
+#large{
+width: 299px;
+right: -300px;
+position: absolute;
+bottom: 67%;
+}
+
+body {
+padding: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #000; /* Black background for contrast */
+font-family: 'monospace', sans-serif;
+}
+
+
+#pause-menu{
+    display: none; 
+    position: fixed; 
+    top: 50%; left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: white; 
+    z-index: 1000;
+}
+
+#welcomeDiv , #time-is-up , #pause-menu{
+text-align: center;
+background-color: rgba(255, 255, 255, 0.8); /* White background with 0.8 opacity */
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for better visibility */
+width: 80%; /* Adjust for smaller screens */
+max-width: 500px; /* Ensure it doesn't stretch too wide */
+}
+
+
+#welcomeDiv h1  , #pause-menu h2{
+margin: 0 0 10px;
+color: #333; /* Slightly dark gray for better readability */
+}
+#time-is-up h1 {
+margin: 0 0 10px;
+color: #333; /* Slightly dark gray for better readability */
+}
+
+#welcomeDiv img {
+max-width: 100%; /* Make the logo responsive */
+height: auto;
+margin-bottom: 15px;
+}
+
+#welcomeDiv #start-game , #pause-menu #continue-game , #pause-menu #restart-btn , #time-is-up #restart-game{
+padding: 10px 20px;
+font-size: 1rem;
+background-color: #333;
+color: #fff;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+#welcomeDiv button:hover , #pause-menu button:hover , #time-is-up button:hover{
+background-color: #555;
+}
+
+#scoreh1{
+font-family: 'monospace', sans-serif;
+color: #fff; /* White text color for visibility */
+font-size: 2.5rem;
+position: absolute;
+top: 20px; /* Position it near the top of the screen */
+left: 50%;
+transform: translateX(-50%); /* Center horizontally */
+margin: 0;
+text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Add a subtle shadow for readability */
+
+}
+
+#timer {
+font-family: 'monospace', sans-serif;
+color: #fff; /* White text color for visibility */
+font-size: 2.5rem;
+position: absolute;
+bottom: 15px; /* Position it just below the score */
+left: 50%;
+transform: translateX(-50%); /* Center horizontally */
+margin: 0;
+background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+padding: 10px 20px;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Subtle shadow for a nice effect */
+}
+
+/* Style for the numeric part of the score and timer */
+#myscore, #time-left {
+font-weight: bold;
+font-size: 2.5rem; /* Make the numbers slightly larger */
+color: #FFD700; /* Gold color for emphasis */
+text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); /* Slight shadow for readability */
+}
+
+/* Optional: Animation for timer and score */
+@keyframes glow {
+0% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 215, 0, 0.8); }
+50% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 15px rgba(255, 215, 0, 1); }
+100% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 215, 0, 0.8); }
+}
+
+#myscore, #time-left {
+animation: glow 1.5s ease-in-out infinite; /* Apply a glowing effect */
+}
+
+
+#game-over{
+color: red;
+font-family: 'monospace', sans-serif;
+font-size: 0.8rem;
+position: absolute;
+top: 45px; /* Position it near the top of the screen */
+left: 50%;
+transform: translateX(-50%); /* Center horizontally */
+margin: 0;
+text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Add a subtle shadow for readability */
+}
+
+#pausebtn {
+    font-family: 'Press Start 2P', monospace; /* Pixelated font */
+    font-size: 14px;
+    color: white;
+    text-transform: uppercase;
+    background-color: #FFD700;
+    border: 3px solid white;
+    padding: 10px 20px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px #333; /* Adds a retro-style shadow */
+    transition: transform 0.2s, box-shadow 0.2s;
+    right: 15px; top: 15px;
+    position: absolute;
+}
+
+#pausebtn:hover {
+    background-color: #444; /* Darken background on hover */
+    transform: translate(-2px, -2px); /* Slight movement on hover */
+    box-shadow: 6px 6px 0px #333;
+}
+
+#pausebtn:active {
+    transform: translate(2px, 2px); /* Press effect */
+    box-shadow: 2px 2px 0px #333;
+}
+

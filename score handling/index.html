@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <meta charset="UTF-8">
+        <title>Duck Hunt</title>
+        <link rel="icon" href="gifs/logo.png" type="image/png">
+        <!-- <link rel="stylesheet" href="styling.css"> -->
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+<style>body {
+    cursor: url("gifs/targeting.png"), auto;
+background-image: url("gifs/stage.png");
+overflow: hidden;
+background-repeat: no-repeat;
+background-size: cover; 
+background-position: center;
+margin: 0;
+height: 100vh;
+width: 100vw; 
+}
+
+#small{
+width: 250px;
+left: -200px;
+position: absolute;
+bottom:  65%;
+}
+#med{
+width: 180px;
+left: -200px;
+position: absolute;
+bottom:  65%;
+}
+#large{
+width: 299px;
+right: -300px;
+position: absolute;
+bottom: 67%;
+}
+
+body {
+padding: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: #000;
+font-family: 'monospace', sans-serif;
+}
+
+
+#pause-menu{
+    display: none; 
+    position: fixed; 
+    top: 50%; left: 50%; 
+    transform: translate(-50%, -50%); 
+    color: white; 
+    z-index: 1000;
+}
+
+#welcomeDiv , #time-is-up , #pause-menu{
+text-align: center;
+background-color: rgba(255, 255, 255, 0.8);
+padding: 20px;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+width: 80%;
+max-width: 500px;
+}
+
+
+#welcomeDiv h1  , #pause-menu h2{
+margin: 0 0 10px;
+color: #333;
+}
+#time-is-up h1 {
+margin: 0 0 10px;
+color: #333;
+}
+
+#welcomeDiv img {
+max-width: 100%; 
+height: auto;
+margin-bottom: 15px;
+}
+
+#welcomeDiv #start-game , #pause-menu #continue-game , #pause-menu #restart-btn , #time-is-up #restart-game{
+padding: 10px 20px;
+font-size: 1rem;
+background-color: #333;
+color: #fff;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+#welcomeDiv button:hover , #pause-menu button:hover , #time-is-up button:hover{
+background-color: #555;
+}
+
+#scoreh1{
+font-family: 'monospace', sans-serif;
+color: #fff;
+font-size: 2.5rem;
+position: absolute;
+top: 20px;
+left: 50%;
+transform: translateX(-50%); 
+margin: 0;
+text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+
+}
+
+#timer {
+font-family: 'monospace', sans-serif;
+color: #fff;
+font-size: 2.5rem;
+position: absolute;
+bottom: 15px; 
+left: 50%;
+transform: translateX(-50%);
+margin: 0;
+background-color: rgba(0, 0, 0, 0.7); 
+padding: 10px 20px;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); 
+}
+
+#myscore, #time-left {
+font-weight: bold;
+font-size: 2.5rem; 
+color: #FFD700; 
+text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8); 
+}
+
+@keyframes glow {
+0% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 215, 0, 0.8); }
+50% { text-shadow: 0 0 10px rgba(255, 255, 255, 0.7), 0 0 15px rgba(255, 215, 0, 1); }
+100% { text-shadow: 0 0 5px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 215, 0, 0.8); }
+}
+
+#myscore, #time-left {
+animation: glow 1.5s ease-in-out infinite; }
+
+#game-over{
+color: red;
+font-family: 'monospace', sans-serif;
+font-size: 0.8rem;
+position: absolute;
+top: 45px; 
+left: 50%;
+transform: translateX(-50%);
+margin: 0;
+text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#pausebtn {
+    font-family: 'Press Start 2P', monospace; 
+    font-size: 14px;
+    color: white;
+    text-transform: uppercase;
+    background-color: #FFD700;
+    border: 3px solid white;
+    padding: 10px 20px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: 4px 4px 0px #333; 
+    transition: transform 0.2s, box-shadow 0.2s;
+    right: 15px; top: 15px;
+    position: absolute;
+}
+
+#pausebtn:hover {
+    background-color: #444; 
+    transform: translate(-2px, -2px); 
+    box-shadow: 6px 6px 0px #333;
+}
+
+#pausebtn:active {
+    transform: translate(2px, 2px); 
+    box-shadow: 2px 2px 0px #333;
+}
+
+
+table {
+    width: 50%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+th {
+    background-color: #f4f4f4;
+}
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+tr:hover {
+    background-color: #f1f1f1;
+}
+caption {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+.pagination {
+    text-align: center;
+    margin-top: 20px;
+}
+.pagination button {
+    padding: 10px 15px;
+    margin: 0 5px;
+    border: none;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+.pagination button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+}</style>
+    </head>
+    <body>
+
+        <div id="welcomeDiv">
+            <h1 style="font-family: monospace;">Welcome to</h1>
+            <img src="gifs/logo.png">
+            <button id="start-game">Start Game</button>
+        </div>
+
+
+        <img src="gifs/small_duck.gif" id="small">
+        <img src="gifs/duck.gif" id="med">
+        <img src="gifs/yes-bg-unscreen.gif" id="large">
+
+
+    <audio src="sound/shotgun-edit.mp3" id="shotgun-sound"></audio>
+   <audio src="sound/Duck Hunt (Complete Soundtrack).mp3" autoplay loop id="bg-sound"></audio>
+   
+
+   <h1 id="scoreh1">Score: <span id="myscore">0</span></h1>
+
+      <div id="timer">Time: <span id="time-left">30</span> seconds</div>
+  
+      <div id="your-name" style="display: none;">
+<h3>WHAT IS YOUR NAME??</h3>
+<input type="text" id="usersname" placeholder="alex bob">
+<input type="submit" value="SEND" id="nameform">
+     </div>
+
+      <div id="time-is-up">
+        <h1>TIME IS UP <br>YOUR SCORE: <span id="finalscore">0</span>
+        <br> Congrats! You are in the top <span id="currPerc">0</span>
+        <table id="scoreboard">
+            <caption>Scoreboard</caption>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Score</th>
+                    <th>Time(min)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Rows will be added dynamically -->
+            </tbody>
+        </table>
+        <div class="pagination">
+            <button id="prevPage" disabled>← Previous</button>
+            <span id="pageInfo">Page 1</span>
+            <button id="nextPage">Next →</button>
+        </div>
+    
+    </h1>
+        <button id="restart-game">Restart</button>    
+      </div>
+
+     <div id="game-over">
+<h1>ATTENTION Y0UR SCORE IS LESS THAN 0 😔</h1>
+     </div>
+
+<div id="pausebtn">PAUSE</div>
+
+     <div id="pause-menu">
+        <h2>Game Paused</h2>
+        <button id="continue-game">Continue</button>
+        <button id="restart-btn">Restart</button>
+    </div>
+    
+
+    <script src="./static/game.js" type="application/javascript"> 
+    //  console.log('Game script loaded!');
+    </script>
+</body>
+</html>

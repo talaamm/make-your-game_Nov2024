@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <meta charset="UTF-8">
+        <title>Duck Hunt</title>
+        <link rel="icon" href="gifs/logo.png" type="image/png">
+        <link rel="stylesheet" href="styling.css">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+        <video id="intro-video" autoplay controls>
+        <source src="intro.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+          </video>
+
+        <video id="mid-video" autoplay controls>
+        <source src="level2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+          </video>
+
+        <video id="final-video" autoplay controls>
+        <source src="final.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+          </video>
+
+        <div id="welcomeDiv">
+            <h1 style="font-family: monospace;">Welcome to</h1>
+            <img src="gifs/logo.png">
+            <button id="start-game">Start Game</button>
+        </div>
+
+
+        <img src="gifs/small_duck.gif" id="small">
+        <img src="gifs/duck.gif" id="med">
+        <img src="gifs/yes-bg-unscreen.gif" id="large">
+
+
+    <audio src="sound/shotgun-edit.mp3" id="shotgun-sound"></audio>
+   <audio src="sound/Duck Hunt (Complete Soundtrack).mp3" autoplay loop id="bg-sound"></audio>
+   
+
+   <h1 id="scoreh1">Score: <span id="myscore">0</span></h1>
+
+      <div id="timer">Time: <span id="time-left">30</span> seconds</div>
+     
+ <div id="loss">
+<h1>TIME IS UP <br>YOUR SCORE: <span id="finalscore-loss">0</span>
+<br><span id="loss-statement" style="color: red;"></span></h1>
+<button id="restart-game">Restart</button>    </div>
+
+     
+      <div id="success">
+<h1>TIME IS UP <br>YOUR SCORE: <span id="finalscore-suc">0</span>
+<br><span style="color: green;">CONGRATULATIONS 🎉</span></h1>
+ <button id="next-level">Next Level</button></div>
+     
+      <div id="success2">
+<h1>TIME IS UP <br>YOUR SCORE: <span id="finalscore-suc2">0</span>
+<br><span style="color: green;">CONGRATULATIONS 🎉</span></h1>
+ <button id="rest-allGame">Restart Game</button></div>
+
+
+     <div id="game-over">
+<h1>ATTENTION Y0UR SCORE IS LESS THAN 0 😔</h1>
+     </div>
+
+<div id="pausebtn">PAUSE</div>
+
+     <div id="pause-menu">
+        <h2>Game Paused</h2>
+        <button id="continue-game">Continue</button>
+        <button id="restart-btn">Restart</button>
+    </div>
+    
+<!-- </div> -->
+      <script src="game.js"></script>
+    </body>
+</html>

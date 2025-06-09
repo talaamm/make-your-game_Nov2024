@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <meta charset="UTF-8">
+        <title>Duck Hunt</title>
+        <link rel="icon" href="gifs/logo.png" type="image/png">
+        <link rel="stylesheet" href="styling.css">
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    </head>
+    <body>
+
+        <div id="welcomeDiv">
+            <h1 style="font-family: monospace;">Welcome to</h1>
+            <img src="gifs/logo.png">
+            <button id="start-game">Start Game</button>
+        </div>
+
+
+        <img src="gifs/small_duck.gif" id="small">
+        <img src="gifs/duck.gif" id="med">
+        <img src="gifs/yes-bg-unscreen.gif" id="large">
+
+
+    <audio src="sound/shotgun-edit.mp3" id="shotgun-sound"></audio>
+   <audio src="sound/Duck Hunt (Complete Soundtrack).mp3" autoplay loop id="bg-sound"></audio>
+   
+
+   <h1 id="scoreh1">Score: <span id="myscore">0</span></h1>
+
+      <div id="timer">Time: <span id="time-left">30</span> seconds</div>
+     
+      <div id="time-is-up">
+<h1>TIME IS UP <br>YOUR SCORE: <span id="finalscore">0</span>
+<br> YOUR HIGHEST SCORE: <span id="highscore">0</span>
+</h1>
+<button id="restart-game">Restart</button>    
+</div>
+
+     <div id="game-over">
+<h1>ATTENTION Y0UR SCORE IS LESS THAN 0 😔</h1>
+     </div>
+
+<div id="pausebtn">PAUSE</div>
+
+     <div id="pause-menu">
+        <h2>Game Paused</h2>
+        <button id="continue-game">Continue</button>
+        <button id="restart-btn">Restart</button>
+    </div>
+    
+
+      <script src="game.js"></script>
+    </body>
+</html>
