@@ -2,6 +2,8 @@
 
 This repository contains several sub-projects developed as part of the "Make Your Game" project at Notre Dame. Each folder is a self-contained sub-project, with its own code, assets, and documentation.
 
+Live Demo for main project: https://talaamm.github.io/make-your-game_Nov2024/
+
 > **Note:**  
 > During our time at Notre Dame, we used Gitea for version control. Each sub-project was maintained in a separate private repository, and we could not control the visibility settings. As a result, the commit history here does not reflect our actual contributions.
 
